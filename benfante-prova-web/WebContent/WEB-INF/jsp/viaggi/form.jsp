@@ -8,7 +8,14 @@
 <title>Form Viaggio</title>
 </head>
 <body>
-	<h1 style="text-align: center">Inserisci viaggio</h1>
+	<c:choose>
+		<c:when test="${empty viaggio}">
+			<h1 style="text-align: center">Inserisci viaggio</h1>
+		</c:when>
+		<c:otherwise>
+			<h1 style="text-align: center">Modifica viaggio</h1>
+		</c:otherwise>
+	</c:choose>
 	<c:if test="${!empty error }">
 		<div>${error}</div>
 	</c:if>
