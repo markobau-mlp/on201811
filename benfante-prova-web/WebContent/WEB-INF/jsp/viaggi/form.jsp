@@ -1,19 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<fmt:setBundle basename="messages"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Form Viaggio</title>
+<title><fmt:message key="title.viaggioForm"/></title>
 </head>
 <body>
+	<%@include file="/WEB-INF/jsp/languageMenu.jspf" %>
 	<c:choose>
 		<c:when test="${empty viaggio}">
-			<h1 style="text-align: center">Inserisci viaggio</h1>
+			<h1 style="text-align: center"><fmt:message key="title.insertViaggio"/></h1>
 		</c:when>
 		<c:otherwise>
-			<h1 style="text-align: center">Modifica viaggio</h1>
+			<h1 style="text-align: center"><fmt:message key="title.updateViaggio"/></h1>
 		</c:otherwise>
 	</c:choose>
 	<c:if test="${!empty error }">

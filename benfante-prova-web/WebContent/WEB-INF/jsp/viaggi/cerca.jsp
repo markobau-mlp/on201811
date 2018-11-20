@@ -1,14 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<fmt:setBundle basename="messages"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cerca viaggi</title>
+<title><fmt:message key="title.searchViaggio"/></title>
 </head>
 <body>
-	<h1 style="text-align: center">Cerca Viaggi</h1>
+	<%@include file="/WEB-INF/jsp/languageMenu.jspf" %>
+	<h1 style="text-align: center"><fmt:message key="title.searchViaggio"/></h1>
 	<c:if test="${!empty message}">
 		<div>${message}</div>
 	<%--	<c:remove var="message"/> --%>
