@@ -14,7 +14,7 @@
 	<h1 style="text-align: center"><fmt:message key="title.searchViaggio"/></h1>
 	<c:if test="${!empty message}">
 		<div>${message}</div>
-	<%--	<c:remove var="message"/> --%>
+		<c:remove var="message"/>
 	</c:if>
 	<c:if test="${!empty error }">
 		<div>${error}</div>
