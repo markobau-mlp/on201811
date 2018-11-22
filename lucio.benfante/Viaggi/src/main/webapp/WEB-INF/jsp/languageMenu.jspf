@@ -1,0 +1,10 @@
+
+<div>
+	<c:url value="" var="italianUrl">
+		<c:param name="lang">it</c:param>
+	</c:url>
+	<c:url value="" var="englishUrl">
+		<c:param name="lang">en</c:param>
+	</c:url>
+	<a href="${italianUrl}">Italiano</a> <a href="${englishUrl}">English</a>
+</div>
