@@ -4,6 +4,9 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <listener>
+  	<listener-class>com.corso.simplewebapp.listener.ExampleListener</listener-class>
+  </listener>
   <servlet>
   	<servlet-name>HelloWorld</servlet-name>
   	<display-name>HelloWorld</display-name>
