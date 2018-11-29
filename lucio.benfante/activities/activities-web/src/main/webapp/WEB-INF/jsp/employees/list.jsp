@@ -3,13 +3,20 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <fmt:setBundle basename="messages" />
+<c:set var="employeesMenuActivation" value="true"/>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <title><fmt:message key="label.Employees" /></title>
+<%@ include file="/WEB-INF/jsp/head.jspf"%>
 </head>
 <body>
+
+	<%@ include file="/WEB-INF/jsp/header.jspf"%>
+
+	<!-- Begin page content -->
+	<main role="main" class="container">
+
 	<h1>
 		<fmt:message key="label.Employees" />
 	</h1>
@@ -33,12 +40,12 @@
 					<td colspan="2">
 						<table>
 							<c:forEach items="${employee.timeSpents}" var="timeSpent">
-							<tr>
-							<td>${timeSpent.start}</td>
-							<td>${timeSpent.end}</td>
-							<td>${timeSpent.activity.customer.name}</td>
-							<td>${timeSpent.activity.description}</td>
-							</tr>
+								<tr>
+									<td>${timeSpent.start}</td>
+									<td>${timeSpent.end}</td>
+									<td>${timeSpent.activity.customer.name}</td>
+									<td>${timeSpent.activity.description}</td>
+								</tr>
 							</c:forEach>
 						</table>
 					</td>
@@ -46,5 +53,12 @@
 			</c:forEach>
 		</tbody>
 	</table>
+
+	</main>
+
+	<%@ include file="/WEB-INF/jsp/footer.jspf"%>
+
+	<%@ include file="/WEB-INF/jsp/javascript.jspf"%>
+
 </body>
 </html>
