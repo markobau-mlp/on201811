@@ -20,34 +20,31 @@
 	<h1>
 		<fmt:message key="label.Employees" />
 	</h1>
-	<table border="1">
-		<thead>
+	<table class="table" border="1" style="text-align:center">
+		<thead class="thead-dark">
 			<tr>
 				<th></th>
 				<th><fmt:message key="label.FirstName" /></th>
 				<th><fmt:message key="label.LastName" /></th>
+				<th><fmt:message key="label.Action"/></th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody">
 			<c:forEach items="${employees}" var="employee" varStatus="status">
 				<tr>
 					<td>${status.count}</td>
 					<td>${employee.firstName}</td>
 					<td>${employee.lastName}</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td colspan="2">
-						<table>
-							<c:forEach items="${employee.timeSpents}" var="timeSpent">
-								<tr>
-									<td>${timeSpent.start}</td>
-									<td>${timeSpent.end}</td>
-									<td>${timeSpent.activity.customer.name}</td>
-									<td>${timeSpent.activity.description}</td>
-								</tr>
-							</c:forEach>
-						</table>
+					<td>
+						<div class="dropdown">
+						<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <fmt:message key="label.ActionButton"/>
+						</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					    <a class="dropdown-item" href="#"><fmt:message key="label.Modify"/></a>
+					    <a class="dropdown-item" href="#"><fmt:message key="label.Delete"/></a>
+						</div>
+						</div>
 					</td>
 				</tr>
 			</c:forEach>
