@@ -185,5 +185,18 @@ public class TimeSpent {
 				+ (end != null ? "end=" + end + ", " : "") + (description != null ? "description=" + description : "")
 				+ "]";
 	}
+	
+	/**
+	 * Calculate the time spent in milliseconds.
+	 * 
+	 * @return The spent milliseconds.
+	 * @throws IllegalStateException if end is still null;
+	 */
+	public long getTimeSpentInMilliseconds() {
+		if (this.end == null) {
+			throw new IllegalStateException("This time spent is still not completed");
+		}
+		return this.getEnd().getTime()-this.getStart().getTime();
+	}
 
 }
