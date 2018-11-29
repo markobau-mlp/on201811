@@ -28,7 +28,7 @@ public class Application {
 		printEmployeeReport(employeeDao.findAll());
 		em.close();
 		
-		// populate(emf);
+		populate(emf);
 		
 		// printEmployeeReport(getEmployeesForTesting());
 		
